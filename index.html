@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+
+    body {
+      background-color: rgb(214, 214, 99);
+    }
+    .row {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .button {
+      margin-bottom: 35px;
+      background-color: green;
+      color: black;
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    .rem {
+      opacity: 0;
+    }
+
+    .div {
+      display: none;
+    }
+
+    .text {
+      color: black;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .show-text {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="row">
+    <div class="col-12 col-md-12">
+      <button class="button btn">Нажмите кнопку!</button>
+      <div class="div"><span class="text"></span></div>
+    </div>
+  </div>
+ </div>
+
+ <script src="https://unpkg.com/ityped@1.0.2"></script>
+
+ <script>
+  const text = document.querySelector(".text");
+
+  ityped.init(text, {
+    showCursor: true,
+    strings: ["Маргарита Михайловна", "Сеструля", "Сеструлинка", "Кто моя сеструля?", "Скажите"],
+    backDelay: 600,
+    backSpeed: 100,
+    typeSpeed: 200,
+  });
+
+
+const button = document.querySelector(".button");
+
+button.addEventListener("click", function () {
+  const div = document.querySelector(".div");
+  div.classList.add("show-text");
+
+  document.querySelector(".btn").classList.add("rem");
+})
+ </script>
+
+</body>
+</html>
